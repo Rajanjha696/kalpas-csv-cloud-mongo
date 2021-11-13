@@ -14,7 +14,7 @@ router.post('/upload', upload.single("file"), async (req, res) => {
         }
 
         let insurance = [];
-        let path = __basedir + "/KALPAS-APIS/uploads/" + req.file.filename;
+        let path = __basedir + "/KALPAS-CSV-CLOUD-MONGO/uploads/" + req.file.filename;
 
         fs.createReadStream(path)
             .pipe(csv.parse({ headers: true }))
