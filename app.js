@@ -9,6 +9,8 @@ const jwt = require('jsonwebtoken');
 const authInfo = require("./configs/authinfo");
 const httpStatus = require('http-status');
 
+app.use(express.static(__dirname + '/KALPAS-CSV-CLOUD-MONGO/uploads'));
+
 const db = require('./db/db');
 const morgan = require('morgan')
 app.use(morgan('dev'))
