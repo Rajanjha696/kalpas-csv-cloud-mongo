@@ -19,6 +19,10 @@ app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
 
 app.use("/api", auth);
+app.get("/", (req, res) => {
+    res.send("Rest APIs for CSV file Reader  are up and running!!");
+});
+
 
 app.use(authService.verifyToken, function (req, res, next) {
     jwt.verify(req.token, authInfo.secretKey, async (err, authData) => {
@@ -34,9 +38,6 @@ app.use(authService.verifyToken, function (req, res, next) {
 app.use("/api", uploadRoute);
 
 
-app.get("/", (req, res) => {
-    res.send("Rest APIs for CSV file Reader  are up and running!!");
-});
 
 app.listen(process.env.PORT || 3000, () => {
     console.log('App listening on port 3000');
