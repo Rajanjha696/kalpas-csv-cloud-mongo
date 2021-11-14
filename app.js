@@ -8,6 +8,7 @@ const constants = require("./util/constants");
 const jwt = require('jsonwebtoken');
 const authInfo = require("./configs/authinfo");
 const httpStatus = require('http-status');
+const path=require("path")
 
 const db = require('./db/db');
 const morgan = require('morgan')
