@@ -11,7 +11,7 @@ const csvFilter = (req, file, cb) => {
 
 var storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, __basedir + "/KALPAS-CSV-CLOUD-MONGO/uploads/");
+    cb(null, __basedir + "/KALPAS-CSV-CLOUD-MONGO/");
   },
   filename: (req, file, cb) => {
     cb(null, `${Date.now()}-bezkoder-${file.originalname}`);

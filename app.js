@@ -16,8 +16,6 @@ app.use(morgan('dev'))
 
 global.__basedir = __dirname + "/..";
 
-app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
 
