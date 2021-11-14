@@ -9,13 +9,13 @@ const jwt = require('jsonwebtoken');
 const authInfo = require("./configs/authinfo");
 const httpStatus = require('http-status');
 
-app.use(express.static(__dirname + '/KALPAS-CSV-CLOUD-MONGO/uploads'));
-
 const db = require('./db/db');
 const morgan = require('morgan')
 app.use(morgan('dev'))
 
 global.__basedir = __dirname + "/..";
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyparser.urlencoded({ extended: false }))
 app.use(bodyparser.json())
@@ -42,5 +42,5 @@ app.use("/api", uploadRoute);
 
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log('App listening on port 3000');
+    console.log('App listening on port 3000' ,process.env.PORT || 3000);
 });
